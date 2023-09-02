@@ -2,20 +2,20 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    getAcounts,
-    updateAcounts,
-    creatAcounts,
-    deleteAcounts
+    getAccount,
+    updateAccount,
+    creatAccount,
+    deleteAccount
 
 } = require("../controllers/acounts.controller")
 router
     .route("/")
-    .get(getAcounts)
-    .post(creatAcounts);
+    .get(getAccount)
+    .post(creatAccount);
 
 router
     .route("/:id")
-    .patch(updateAcounts)
-    .delete(deleteAcounts)
+    .patch(updateAccount)
+    .delete(deleteAccount)
 
 module.exports = router;

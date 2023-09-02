@@ -39,10 +39,10 @@ const acounts = [
 
 
 module.exports = {
-    getAcounts:  (req, res, next) => {
+    getAccount:  (req, res, next) => {
         return res.status(200).json(acounts)
     },
-    creatAcounts:(req, res, next) => {
+    creatAccount:(req, res, next) => {
         const body = req.body
         let id = Math.floor(Math.random() * 10)
         body.id = id
@@ -51,7 +51,7 @@ module.exports = {
         return res.status(201).json(body)
     
     },
-    updateAcounts :(req, res, next) => {
+    updateAccount :(req, res, next) => {
         const id = req.params.id
         const body = req.body
         const index = acounts.findIndex((v) => v.id === +id)
@@ -62,7 +62,7 @@ module.exports = {
         acounts[index] = bodyUpdate
         return res.status(200).json(body)
     },
-    deleteAcounts :(req, res, next) => {
+    deleteAccount :(req, res, next) => {
         const id = req.params.id
         const index = acounts.findIndex((v) => v.id === +id)
         acounts.splice(index, 1)
